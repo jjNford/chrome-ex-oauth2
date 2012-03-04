@@ -41,25 +41,18 @@
 
 	window.OAuth2 = {
 		
-		_key: "token",
-		
-		/*
-		 * Set application and api information here <-----------------------------------------------
-		 * 
-		 * _access_token_url  - URL to api where token is requested from.
-		 * _authorization_url - URL to api where use authorizes extension.
-		 * _client_id         - Application ID.
-		 * _client_secret     - Application secret.
-		 * _redirect_url      - URL where api will redirect access token request.
-		 * _scopes            - API permissions being requested.
-		 *  
+		/**
+		 * Initializes OAuth2.
 		 */
-		_access_token_url: "", // <------------------------------- URL to api where token is request
-		_authorization_url: "", // <---------------- URL to api where user authorizes extension with
-		_client_id: "", // <--------------------------------------------------------- Application ID
-		_client_secret: "", // <------------------------------------------------- Application secret
-		_redirect_url: "", // <-------------------- URL where api will redirect access token request
-		_scopes: [''], // <----------------------------------------- API permissions being requested
+		init: function() {
+			this._key = "token";
+			this._access_token_url = ""; // <--------------------- URL to api where token is request
+			this._authorization_url = ""; // <------ URL to api where user authorizes extension with
+			this._client_id = ""; // <----------------------------------------------- Application ID
+			this._client_secret = ""; // <--------------------------------------- Application secret
+			this._redirect_url = ""; // <---------- URL where api will redirect access token request
+			this._scopes = ['']; // <------------------------------- API permissions being requested
+		},
 		
 		/**
 		 * Begins the OAuth2 process.
@@ -170,5 +163,7 @@
 			}
 		}
 	};
+	
+	OAuth2.init();
 
 })();
