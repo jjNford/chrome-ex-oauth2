@@ -1,0 +1,11 @@
+{
+    "content_scripts": [
+    	{
+    		"matches": [""], <------------------------------------------ Add your redirect url here.
+    		"js": ["js/injection.js"],
+    		"run_at": "document_start"
+    	}
+    ],
+        
+    "permissions": [], <--------------------------------- Add your providers website & api url here.   
+}

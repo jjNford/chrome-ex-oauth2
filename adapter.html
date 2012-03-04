@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Authorizing</title>
+
+    <!-- css -->
+    <style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			background: url('img/loading.gif') center center  no-repeat;
+		}
+	</style>
+    <!-- end css -->
+
+	<!-- js -->
+	<script src="js/oauth2.js"></script>
+	<script type="text/javascript">
+		OAuth2.parseAccessCode(window.location.href);
+	</script>
+	<!-- end js -->
+
+</head>
+<body>
+</body>
+</html>
