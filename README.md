@@ -37,11 +37,20 @@ API
 
 Gets the users OAuth2 token.
 
+---
+
 > **deleteToken()** <br/><br/>
 `Returns true if a token was deleted from localStorage, false if not`
 
-
 Deletes the users OAuth2 token (user will have to authenticate next time extension is used).
+
+---
+
+> **begin()** <br/>
+
+Starts the OAuth2 process.
+
+---
 
 Notes
 -----
