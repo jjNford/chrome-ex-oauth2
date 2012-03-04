@@ -16,6 +16,7 @@ How To Use
 ----------
 - The first thing you will need to do it merge your manifest with the oauth2-chrome-extesion manifest that declares a content script.
 - Application information then must be filled into the specified areas of the oauth2.js and manifest files.
+- The redirect URL you specify will have a script injected into, so most webpages will work but I would suggest using a webpage that is related to the provider you are requesting OAuth2 from and that is static (this way you are guaranteed to know that the page exists, and if the site is down then more than likely so is the provider).  A good redirect page is the providers robots.txt page.
 - Starting the OAuth2 process is easy:
 
         myEventToTriggerAuthorization() {
