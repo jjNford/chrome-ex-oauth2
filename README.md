@@ -1,6 +1,6 @@
 OAuth2 for Chrome Extensions
 ============================
-Provides a method to retrieve an OAuth2 token with no background page in a Google Chrome Extension.
+Provides a method to retrieve an OAuth2 token with no background page in a Google Chrome Extension.  This is a streamlined version modeled from the [oauth2-extensions](https://github.com/borismus/oauth2-extensions) repository by Boris Smus.
 
 Information about OAuth2 can be found [here](http://oauth.net/2/).
 
