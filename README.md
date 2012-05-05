@@ -6,7 +6,7 @@ Information about OAuth2 can be found [here](http://oauth.net/2/).
 
 Why Use This Method
 -------------------
-The [Chrome API](http://code.google.com/chrome/extensions/tut_oauth.html) provides an example of how to use OAuth2 in an extension but you may find it very complicated or too in depth.  This is an easier way to achieve the same thing.
+The [Chrome API](http://code.google.com/chrome/extensions/tut_oauth.html) provides an example of how to use OAuth 1 in an extension but that is quite outdated now as Google have depreciated OAuth 1.  This is an easier way to achieve the same thing.
 
 Another huge advantage is the fact that this method does not require a background page to be running Chrome.  This is something user love to hear, so using this method gives you some bragging rights for the Chrome Web Store!
 
