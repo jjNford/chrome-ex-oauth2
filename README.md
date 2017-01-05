@@ -34,11 +34,6 @@ Also make sure to give Web Accesible Resources permissions to your 'libs' folder
 
 	{
 	      "web_accessible_resources": [
-    			"iconslifx/*.png",
-    			"iconslifx/*.jpg",
-    			"colorpicker.css",
-    			"mdl/*.css",
-   			"mdl/*.js",
     			"libs/*"
 		  ]
 	}
