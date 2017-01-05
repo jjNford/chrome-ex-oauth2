@@ -28,6 +28,20 @@ How To Use
 		...
 		...
 	}
+	
+	
+Also make sure to give Web Accesible Resources to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
+
+	```text
+	      "web_accessible_resources": [
+    			"iconslifx/*.png",
+    			"iconslifx/*.jpg",
+    			"colorpicker.css",
+    			"mdl/*.css",
+   			"mdl/*.js",
+    			"libs/*"
+		  ]
+		}
 	```
 
 2. Add application and API information to `libs/chrome-ex-auth/oauth2.js`:
