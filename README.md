@@ -32,7 +32,7 @@ How To Use
 	
 Also make sure to give Web Accesible Resources permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
 
-	```text
+	```
 	      "web_accessible_resources": [
     			"iconslifx/*.png",
     			"iconslifx/*.jpg",
