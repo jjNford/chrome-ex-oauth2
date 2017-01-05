@@ -32,7 +32,7 @@ How To Use
 	
 Also make sure to give Web Accesible Resources permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
 
-	```
+	{
 	      "web_accessible_resources": [
     			"iconslifx/*.png",
     			"iconslifx/*.jpg",
@@ -41,8 +41,7 @@ Also make sure to give Web Accesible Resources permissions to your 'libs' folder
    			"mdl/*.js",
     			"libs/*"
 		  ]
-		}
-	```
+	}
 
 2. Add application and API information to `libs/chrome-ex-auth/oauth2.js`:
 
