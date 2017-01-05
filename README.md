@@ -60,6 +60,10 @@ How To Use
 			
 	```
 
+Note: The provided function is only a boiler-plate. The variable names and the variables you pass to the Authorization API would be specific to the API you are using. Some authorization APIs would require other parameters like  `scope` and `response-type`. 
+
+You would need to include those parameters in your initial variables and modify the 'start' function to include the newly added parameters.
+
 
 3. Include the authorization script in your project:
 
