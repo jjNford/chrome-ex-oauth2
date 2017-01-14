@@ -1,11 +1,11 @@
-===============================
 <p align="center">
   <img src="https://whoisjuan.github.io/alt-images/chromeauth2.png" alt="ChromeAuth2: Chrome Extension OAuth2 Library"/>
 </p>
+===============================
 
-A straight-forward and easy to use alternative to launch an OAuth2 Flow within a Chrome Extension.
+ChromeAuth2 is Chrome Extension OAuth2 Library that provides a straight-forward and easy to use alternative to launch an OAuth2 Flows within a Chrome Extension.
 
-Chrome Extension OAuth2 Library provides a simple mechanism and flow that allows you to retrieve an authorization token from any common OAuth2 API.
+By using ChromeAuth2 you would be able to start an authorization process from a Chrome Extension popup.html view and retrieve an OAuth2 token that can be later used from your popup.js or background.js scripts.
 
 
 How To Use
