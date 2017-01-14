@@ -1,7 +1,10 @@
 ChromeAuth2: Chrome Extension OAuth2 Library
 ===============================
 
-![alt tag](https://whoisjuan.github.io/alt-images/chromeauth2.png)
+
+<p align="center">
+  <img src="https://whoisjuan.github.io/alt-images/chromeauth2.png" alt="ChromeAuth2: Chrome Extension OAuth2 Library"/>
+</p>
 
 A straight-forward and easy to use alternative to launch an OAuth2 Flow within a Chrome Extension.
 
