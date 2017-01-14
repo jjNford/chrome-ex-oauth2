@@ -1,7 +1,4 @@
-ChromeAuth2: Chrome Extension OAuth2 Library
 ===============================
-
-
 <p align="center">
   <img src="https://whoisjuan.github.io/alt-images/chromeauth2.png" alt="ChromeAuth2: Chrome Extension OAuth2 Library"/>
 </p>
