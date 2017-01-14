@@ -1,5 +1,6 @@
-Chrome Extension OAuth2 Library
+ChromeAuth2: Chrome Extension OAuth2 Library
 ===============================
+
 A straight-forward and easy to use alternative to launch an OAuth2 Flow within a Chrome Extension.
 
 Chrome Extension OAuth2 Library provides a simple mechanism and flow that allows you to retrieve an authorization token from any common OAuth2 API.
