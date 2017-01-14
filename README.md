@@ -17,7 +17,7 @@ How To Use
 		"permissions":{
 			"https://github.com/login/oauth/access_token",
 			"tabs",
-			storage
+			"storage"
 		},
 		
 		"content_scripts":[{
