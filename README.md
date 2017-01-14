@@ -7,7 +7,7 @@ How To Use
 ----------
 1. Add the following to your extension manifest:
 
-	Note: The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for.
+	Note: The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
 	
 	```text
 	{
@@ -16,7 +16,8 @@ How To Use
 		
 		"permissions":{
 			"https://github.com/login/oauth/access_token",
-			"tabs"
+			"tabs",
+			storage
 		},
 		
 		"content_scripts":[{
