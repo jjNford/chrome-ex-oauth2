@@ -18,7 +18,7 @@ The `permissions` url and `content_script` > `matches` URL are determined by the
 	
 We also would need to grant permission to an injection script ('injection.js') that would be launched to complete the OAuth dance. Please have in mind that you need to replace the "matches" URL with your OAuth Redirection URL. The injection would be launched after hitting the Redirection URL. In this case you would need to replace `https://github.com/robots.txt*` with the URL you setup with your authorization provider.
 	
-	```
+
 	{
 		...
 		...
@@ -38,23 +38,23 @@ We also would need to grant permission to an injection script ('injection.js') t
 		...
 		...
 	}
-	```
+
 	
  Also make sure to give "Web Accesible Resources" permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
 
-	```
-	{
-	      "web_accessible_resources": [
-    			"libs/*"
-		  ]
-	}
-	```
+
+		{
+		      "web_accessible_resources": [
+				"libs/*"
+			  ]
+		}
+
 <br>
 <br>
 
 #### 2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`:
 
-	```
+
 		(function() {
 			window.oauth2 = {
 			
@@ -69,14 +69,13 @@ We also would need to grant permission to an injection script ('injection.js') t
 			...
 		
 		})();			
-			
-	```
 
-	***Note:*** The provided function is only a boiler-plate. The variable names and the variables you pass to the Authorization API would be specific to your API provider. Some authorization APIs would require other parameters like  `scope` and `response-type`. 
 
-	You would need to include those parameters in your initial variables and modify the `start()` function to include the newly added parameters. You might also need to add some logic if you have an array of scopes or other array of values that need to be passed to the URL:
+***Note:*** The provided function is only a boiler-plate. The variable names and the variables you pass to the Authorization API would be specific to your API provider. Some authorization APIs would require other parameters like  `scope` and `response-type`. 
+
+You would need to include those parameters in your initial variables and modify the `start()` function to include the newly added parameters. You might also need to add some logic if you have an array of scopes or other array of values that need to be passed to the URL:
 	
-	```
+
 		start: function() {
 			    window.close();
 			    // Modify this url depending on the parameters that your API providers requires you to pass.
@@ -88,13 +87,13 @@ We also would need to grant permission to an injection script ('injection.js') t
 			    chrome.tabs.create({ url: url, active: true });
 			},		
 			
-	```	
+
 <br>
 <br>
 
 #### 3. Include the authorization script `popup.html` view of your project:
 
-	```
+
 	<html>
 	...
 	...
@@ -108,28 +107,27 @@ We also would need to grant permission to an injection script ('injection.js') t
 		...
 	</body>
 	</html>
-	```
+
 	
 <br>
 <br>
 
 #### 4. To launch the authorization flow, run this function from your script: 
 
-	```
 	window.oauth2.start();
-	```
+
 
 The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your popup.html.
 	
-	```
+
 	<button id="oauth-button> Click Me to Authorize with GitHub</button>
-	```
-	
-	```javascript
+
+<br>
+
 	$('#oauth-button').click(function() {
     		window.oauth2.start();
 	});
-	```
+
 <br>
 <br>
 	
@@ -137,7 +135,6 @@ The ideal way to call `oauth2.start()` function and initialize the library flow 
 
 For your convenience here is a comment that you can add to your extension for attribution:
 
-	```
 	/**
 	* ChromeAuth2 is an open-source library created by https://github.com/jjNford
 	* with contributions and branding by https://github.com/whoisjuan
@@ -147,7 +144,6 @@ For your convenience here is a comment that you can add to your extension for at
 	* The orginal author and main contributors encourage the use of their work but 
 	* do not endorse any specific project in which their work is used.
 	*/
-	```
 	
 <br>
 <br>
