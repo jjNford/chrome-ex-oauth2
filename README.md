@@ -165,7 +165,7 @@ API
 
 >**finish()**
 ><br><br>
->Finished the authorization process (To use only within the OAuth flow and after succesfully invoking and execution `start()`
+>Finishes the authorization process (to use only within the OAuth flow and after succesfully invoking and execution `start()`
 
 <br>
 
