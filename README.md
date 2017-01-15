@@ -16,9 +16,6 @@ How To Use
 ----------
 #### 1. Add the following to your extension manifest:
 
-The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
-	
-We also would need to grant permission to an injection script ('injection.js') that would be launched to complete the OAuth dance. Please have in mind that you need to replace the "matches" URL with your OAuth Redirection URL. The injection would be launched after hitting the Redirection URL. In this case you would need to replace `https://github.com/robots.txt*` with the URL you setup with your authorization provider.
 	
 
 	{
@@ -41,8 +38,14 @@ We also would need to grant permission to an injection script ('injection.js') t
 		...
 	}
 
+
+The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
 	
- Also make sure to give "Web Accesible Resources" permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
+We also would need to grant permission to an injection script ('injection.js') that would be launched to complete the OAuth dance. Please have in mind that you need to replace the "matches" URL with your OAuth Redirection URL. The injection would be launched after hitting the Redirection URL. In this case you would need to replace `https://github.com/robots.txt*` with the URL you setup with your authorization provider.
+
+<br>
+
+Also make sure to give "Web Accesible Resources" permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
 
 
 		{
@@ -119,14 +122,14 @@ You would need to include those parameters in your initial variables and modify 
 	window.oauth2.start();
 
 
-The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your popup.html:
+The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your extension html:
 	
 popup.html
 
 	<button id="oauth-button> Click Me to Authorize with GitHub</button>
 <br>
 
-popup.html or background.html
+popup.js or background.js
 
 	$('#oauth-button').click(function() {
     		window.oauth2.start();
