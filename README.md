@@ -137,6 +137,14 @@ For your convenience here is a comment that you can add to your extension for at
 	* do not endorse any specific project in which their work is used.
 	*/
 	```
+	
+How Does it Work
+----------
+
+<p align="center">
+  <img src="https://whoisjuan.github.io/alt-images/flow.png" alt="ChromeAuth2: Chrome Extension OAuth2 Library Flow"/>
+</p>
+
 
 
 API
