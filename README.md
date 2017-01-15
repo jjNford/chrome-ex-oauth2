@@ -119,12 +119,14 @@ You would need to include those parameters in your initial variables and modify 
 	window.oauth2.start();
 
 
-The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your popup.html.
+The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your popup.html:
 	
+popup.html
 
 	<button id="oauth-button> Click Me to Authorize with GitHub</button>
-
 <br>
+
+popup.html or background.html
 
 	$('#oauth-button').click(function() {
     		window.oauth2.start();
