@@ -10,7 +10,7 @@ By using ChromeAuth2 you would be able to start an authorization process from a 
 
 How To Use
 ----------
-### 1. Add the following to your extension manifest:
+#### 1. Add the following to your extension manifest:
 
 	The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
 	
@@ -48,7 +48,7 @@ How To Use
 	}
 	```
 
-### 2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`
+#### 2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`:
 
 	```javascript
 		(function() {
@@ -87,7 +87,7 @@ How To Use
 	```	
 
 
-### 3. Include the authorization script `popup.html` view of your project:
+#### 3. Include the authorization script `popup.html` view of your project:
 
 	```html
 	<html>
@@ -105,7 +105,7 @@ How To Use
 	</html>
 	```
 
-### 4. To launch the authorization flow, run this function from your script" 
+#### 4. To launch the authorization flow, run this function from your script" 
 
 	```javascript
 	window.oauth2.start();
@@ -122,12 +122,20 @@ How To Use
 	});
 	```
 	
-### 5. Please include attribution to library. For your convenience here is a comment that you can add to your extension for attribution:
+#### 5. Please include attribution to library. 
+
+For your convenience here is a comment that you can add to your extension for attribution:
 
 	```javascript
-	$('#oauth-button').click(function() {
-    		window.oauth2.start();
-	});
+	/**
+	* ChromeAuth2 is an open-source library created by https://github.com/jjNford
+	* with contributions and branding by https://github.com/whoisjuan
+	*
+	* Redistribution of this work, with or without modification, is permitted if
+	* proper attributions to the original author and main contributors are added.
+	* The orginal author and main contributors encourage the use of their work but 
+	* do not endorse any specific project in which their work is used.
+	*/
 	```
 
 
@@ -142,13 +150,13 @@ API
 
 >**getToken()**
 ><br><br>
->Retrieves the applications authorization token from the browsers local storage.
+>Retrieves the applications authorization token from the Chrome Storage.
 
 <br>
 
 >**clearToken()**
 ><br><br>
->Clears the applications token from the browsers local storage.
+>Clears the applications token from the Chrome Storage.
 
 --
 <sub>This library has only been tested with the [GitHub API v3](http://developer.github.com/v3/) and [LIFX Remote Control API v1] (https://api.developer.lifx.com/)</sub>
