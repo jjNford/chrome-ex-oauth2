@@ -48,7 +48,7 @@ How To Use
 	}
 	```
 
-<h3>2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`:<h3>
+<h3>2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`:</h3>
 
 	```javascript
 		(function() {
@@ -87,7 +87,7 @@ start: function() {
 	```	
 
 
-<h3>3. Include the authorization script `popup.html` view of your project:</h3>
+3. Include the authorization script `popup.html` view of your project:
 
 	```html
 	<html>
