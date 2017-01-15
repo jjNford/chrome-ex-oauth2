@@ -145,6 +145,15 @@ For your convenience here is a comment that you can add to your extension for at
 	* proper attributions to the original author and main contributors are added.
 	* The orginal author and main contributors encourage the use of their work but 
 	* do not endorse any specific project in which their work is used.
+	
+	
+	*Copyright-2017 2012: Original Author, JJ Ford and Contributor, Juan J Ramirez.
+
+   	*Licensed under the Apache License, Version 2.0 (the "License");
+   	*you may not use this file except in compliance with the License.
+   	*You may obtain a copy of the License at
+
+       	*http://www.apache.org/licenses/LICENSE-2.0
 	*/
 	
 <br>
