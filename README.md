@@ -10,7 +10,7 @@ By using ChromeAuth2 you would be able to start an authorization process from a 
 
 How To Use
 ----------
-<h3>1. Add the following to your extension manifest:</h3>
+### 1. Add the following to your extension manifest:
 
 	The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
 	
@@ -48,7 +48,7 @@ How To Use
 	}
 	```
 
-<h3>2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`:</h3>
+### 2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`
 
 	```javascript
 		(function() {
@@ -73,21 +73,21 @@ How To Use
 	You would need to include those parameters in your initial variables and modify the `start()` function to include the newly added parameters. You might also need to add some logic if you have an array of scopes or other array of values that need to be passed to the URL:
 	
 	```javascript
-start: function() {
-            window.close();
-	    // Modify this url depending on the parameters that your API providers requires you to pass.
-            var url = this.authorization_url + "?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_url + "&response_type=" + this.response_type + "&scope=" + this.scope;
-	    // Use this logic to include several scopes.
-            // for(var i in this.scopes) {
-            //     url += this.scopes[i];
-            // }
-            chrome.tabs.create({ url: url, active: true });
-        },		
+		start: function() {
+			    window.close();
+			    // Modify this url depending on the parameters that your API providers requires you to pass.
+			    var url = this.authorization_url + "?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_url + "&response_type=" + this.response_type + "&scope=" + this.scope;
+			    // Use this logic to include several scopes.
+			    // for(var i in this.scopes) {
+			    //     url += this.scopes[i];
+			    // }
+			    chrome.tabs.create({ url: url, active: true });
+			},		
 			
 	```	
 
 
-3. Include the authorization script `popup.html` view of your project:
+### 3. Include the authorization script `popup.html` view of your project:
 
 	```html
 	<html>
@@ -105,7 +105,7 @@ start: function() {
 	</html>
 	```
 
-<h3>4. To launch the authorization flow, run this function from your script"</h3> 
+### 4. To launch the authorization flow, run this function from your script" 
 
 	```javascript
 	window.oauth2.start();
@@ -122,7 +122,7 @@ start: function() {
 	});
 	```
 	
-<h3>5. Please include attribution to library. For your convenience here is a comment that you can add to your extension for attribution:</h3>
+### 5. Please include attribution to library. For your convenience here is a comment that you can add to your extension for attribution:
 
 	```javascript
 	$('#oauth-button').click(function() {
