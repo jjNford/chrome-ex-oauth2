@@ -3,14 +3,14 @@
 </p>
 ===============================
 
-ChromeAuth2 is a Chrome Extension OAuth2 Library that provides a straight-forward and easy to use alternative to launch an OAuth2 Flows within a Chrome Extension.
+ChromeAuth2 is a Chrome Extension OAuth2 Library that provides a straight-forward and easy-to-use alternative to launch an OAuth2 Flows within a Chrome Extension.
 
 By using ChromeAuth2 you would be able to start an authorization process from a Chrome Extension `popup.html` view. ChromeAuth2 would then complete the authorization "dance" and store the token in a Chrome Storage instance that can be accessed from any script of your extension. 
 
 
 How To Use
 ----------
-1. Add the following to your extension manifest:
+<h2>1. Add the following to your extension manifest:</h2>
 
 	The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
 	
@@ -70,10 +70,24 @@ How To Use
 
 	***Note:*** The provided function is only a boiler-plate. The variable names and the variables you pass to the Authorization API would be specific to your API provider. Some authorization APIs would require other parameters like  `scope` and `response-type`. 
 
-	You would need to include those parameters in your initial variables and modify the 'start' function to include the newly added parameters.
+	You would need to include those parameters in your initial variables and modify the `start()` function to include the newly added parameters. You might also need to add some logic if you have an array of scopes or other array of values that need to be passed to the URL:
+	
+	```javascript
+start: function() {
+            window.close();
+	    // Modify this url depending on the parameters that your API providers requires you to pass.
+            var url = this.authorization_url + "?client_id=" + this.client_id + "&redirect_uri=" + this.redirect_url + "&response_type=" + this.response_type + "&scope=" + this.scope;
+	    // Use this logic to include several scopes.
+            // for(var i in this.scopes) {
+            //     url += this.scopes[i];
+            // }
+            chrome.tabs.create({ url: url, active: true });
+        },		
+			
+	```	
 
 
-3. Include the authorization script in your project:
+3. Include the authorization script `popup.html` view of your project:
 
 	```html
 	<html>
@@ -96,7 +110,7 @@ How To Use
 	```javascript
 	window.oauth2.start();
 	```
-	The ideal way to initialize the library flow is by calling the`oauth2.start()` function from a button or link in your popup.html.
+	The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your popup.html.
 	
 	```HTML5
 	<button id="oauth-button> Click Me to Authorize with GitHub</button>
@@ -108,7 +122,14 @@ How To Use
 	});
 	```
 	
-5. Please include attribution to library.
+5. Please include attribution to library. For your convenience here is a comment that you can add to your extension for attribution:
+
+	```javascript
+	$('#oauth-button').click(function() {
+    		window.oauth2.start();
+	});
+	```
+
 
 API
 ---
