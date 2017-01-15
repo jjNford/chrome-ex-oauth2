@@ -3,16 +3,18 @@
 </p>
 ===============================
 
-ChromeAuth2 is Chrome Extension OAuth2 Library that provides a straight-forward and easy to use alternative to launch an OAuth2 Flows within a Chrome Extension.
+ChromeAuth2 is a Chrome Extension OAuth2 Library that provides a straight-forward and easy to use alternative to launch an OAuth2 Flows within a Chrome Extension.
 
-By using ChromeAuth2 you would be able to start an authorization process from a Chrome Extension popup.html view and retrieve an OAuth2 token that can be later used from your popup.js or background.js scripts.
+By using ChromeAuth2 you would be able to start an authorization process from a Chrome Extension `popup.html` view. ChromeAuth2 would then complete the authorization "dance" and store the token in a a Chrome Storage instance that can be accessed from any script of your extension. 
 
 
 How To Use
 ----------
 1. Add the following to your extension manifest:
 
-	Note: The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
+	The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
+	
+	We also would need to grant permission to an injection script ('injection.js') that would be launched to complete the OAuth dance. Please have in mind that you need to replace the "matches" URL with your OAuth Redirection URL. The injection would be launched after hitting the Redirection URL. In this case you would need to replace `https://github.com/robots.txt*` with the URL you setup with your authorization provider.
 	
 	```text
 	{
@@ -36,7 +38,7 @@ How To Use
 	}
 	```
 	
- Also make sure to give Web Accesible Resources permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
+ Also make sure to give "Web Accesible Resources" permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
 
 	```text
 	{
@@ -46,7 +48,7 @@ How To Use
 	}
 	```
 
-2. Add application and API information to `libs/chrome-ex-auth/oauth2.js`:
+2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`:
 
 	```javascript
 		(function() {
@@ -66,7 +68,7 @@ How To Use
 			
 	```
 
-	***Note:*** The provided function is only a boiler-plate. The variable names and the variables you pass to the Authorization API would be specific to the API you are using. Some authorization APIs would require other parameters like  `scope` and `response-type`. 
+	***Note:*** The provided function is only a boiler-plate. The variable names and the variables you pass to the Authorization API would be specific to your API provider. Some authorization APIs would require other parameters like  `scope` and `response-type`. 
 
 	You would need to include those parameters in your initial variables and modify the 'start' function to include the newly added parameters.
 
@@ -89,13 +91,24 @@ How To Use
 	</html>
 	```
 
-4. To authorize the application from your script:
+4. To launch the authorization flow, run this function from your script. 
 
 	```javascript
 	window.oauth2.start();
 	```
+	The ideal way to initialize the library flow is by calling the`oauth2.start()` function from a button or link in your popup.html.
 	
-5. Include attribution to library.
+	```HTML5
+	<button id="oauth-button> Click Me to Authorize with GitHub</button>
+	```
+	
+	```javascript
+	$('#oauth-button').click(function() {
+    		window.oauth2.start();
+	});
+	```
+	
+5. Please include attribution to library.
 
 API
 ---
