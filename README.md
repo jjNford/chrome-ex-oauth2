@@ -14,11 +14,11 @@ How To Use
 ----------
 #### 1. Add the following to your extension manifest:
 
-	The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
+The `permissions` url and `content_script` > `matches` URL are determined by the API you are requesting authorization for. We will be requesting permission to launch tabs and use the Chrome native storage.
 	
-	We also would need to grant permission to an injection script ('injection.js') that would be launched to complete the OAuth dance. Please have in mind that you need to replace the "matches" URL with your OAuth Redirection URL. The injection would be launched after hitting the Redirection URL. In this case you would need to replace `https://github.com/robots.txt*` with the URL you setup with your authorization provider.
+We also would need to grant permission to an injection script ('injection.js') that would be launched to complete the OAuth dance. Please have in mind that you need to replace the "matches" URL with your OAuth Redirection URL. The injection would be launched after hitting the Redirection URL. In this case you would need to replace `https://github.com/robots.txt*` with the URL you setup with your authorization provider.
 	
-	```text
+	```
 	{
 		...
 		...
@@ -42,7 +42,7 @@ How To Use
 	
  Also make sure to give "Web Accesible Resources" permissions to your 'libs' folders. The extension would need explicit access to this folder after adding the library.
 
-	```text
+	```
 	{
 	      "web_accessible_resources": [
     			"libs/*"
@@ -54,7 +54,7 @@ How To Use
 
 #### 2. Add your application and API provider information to `libs/chrome-ex-auth/oauth2.js`:
 
-	```javascript
+	```
 		(function() {
 			window.oauth2 = {
 			
@@ -76,7 +76,7 @@ How To Use
 
 	You would need to include those parameters in your initial variables and modify the `start()` function to include the newly added parameters. You might also need to add some logic if you have an array of scopes or other array of values that need to be passed to the URL:
 	
-	```javascript
+	```
 		start: function() {
 			    window.close();
 			    // Modify this url depending on the parameters that your API providers requires you to pass.
@@ -94,7 +94,7 @@ How To Use
 
 #### 3. Include the authorization script `popup.html` view of your project:
 
-	```html
+	```
 	<html>
 	...
 	...
@@ -113,14 +113,15 @@ How To Use
 <br>
 <br>
 
-#### 4. To launch the authorization flow, run this function from your script" 
+#### 4. To launch the authorization flow, run this function from your script: 
 
-	```javascript
+	```
 	window.oauth2.start();
 	```
-	The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your popup.html.
+
+The ideal way to call `oauth2.start()` function and initialize the library flow is by calling it from a button or link in your popup.html.
 	
-	```HTML5
+	```
 	<button id="oauth-button> Click Me to Authorize with GitHub</button>
 	```
 	
@@ -132,11 +133,11 @@ How To Use
 <br>
 <br>
 	
-#### 5. Please include attribution to library. 
+#### 5. Please include attribution to library: 
 
 For your convenience here is a comment that you can add to your extension for attribution:
 
-	```javascript
+	```
 	/**
 	* ChromeAuth2 is an open-source library created by https://github.com/jjNford
 	* with contributions and branding by https://github.com/whoisjuan
