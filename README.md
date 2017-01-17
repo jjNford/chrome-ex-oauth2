@@ -186,7 +186,7 @@ API
 
 >**finish()**
 ><br><br>
->Finishes the authorization process (to use only within the OAuth flow and after succesfully invoking and execution `start()`.
+>Finishes the authorization process (Already setup on the library flow. If you want to alter this function or its behavior, make sure to use it exclusively within the OAuth flow and after succesfully invoking and executing. `start()`.
 
 <br>
 
