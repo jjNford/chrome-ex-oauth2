@@ -132,7 +132,7 @@ popup.html
 popup.js or background.js
 
 	$('#oauth-button').click(function() {
-    		window.oauth2.start();
+            window.oauth2.start();
 	});
 
 <br>
@@ -143,8 +143,8 @@ popup.js or background.js
 For your convenience here is a comment that you can add to your extension for attribution:
 
 	/**
-	* ChromeAuth2 is an open-source library created by https://github.com/jjNford
-	* with contributions and branding by https://github.com/whoisjuan
+	* ChromeAuth2 is a fork from the open-source library 'chrome-ex-oauth2' originally created by https://github.com/jjNford
+	* This extendeion of the library was developed and branded by https://github.com/whoisjuan
 	*
 	* Redistribution of this work, with or without modification, is permitted if
 	* proper attributions to the original author and main contributors are added.
