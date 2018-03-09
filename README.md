@@ -144,7 +144,7 @@ For your convenience here is a comment that you can add to your extension for at
 
 	/**
 	* ChromeAuth2 is a fork from the open-source library 'chrome-ex-oauth2' originally created by https://github.com/jjNford
-	* This extendeion of the library was developed and branded by https://github.com/whoisjuan
+	* This version of the library was developed, documented and branded by https://github.com/whoisjuan
 	*
 	* Redistribution of this work, with or without modification, is permitted if
 	* proper attributions to the original author and main contributors are added.
