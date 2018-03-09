@@ -58,8 +58,18 @@
                             if(xhr.responseText.match(/error=/)) {
                                 removeTab();
                             } else {
-                                var token = xhr.responseText.match(/access_token=([^&]*)/)[1];
-                                window.localStorage.setItem(that.key, token);
+                                // Parsing JSON Response.
+                                var response = xhr.responseText;
+                                var jsonResponse = JSON.parse(response);
+                                // Replace "access_token" with the parameter
+                                // relevant to the API you're using.
+                                var tokenOauth = jsonResponse.access_token
+                                var obj = { 'token': tokenOauth };
+                                // Storing in Chrome Local Storage.
+                                chrome.storage.local.set(obj, function() {
+                                    // Notify that we saved.
+                                    console.log('oAuth Token saved');
+                                });
                                 removeTab();
                             }
                         } else {
@@ -71,21 +81,23 @@
                 xhr.send(data);
             }
         },
-
+        
         /**
-         * Retreives the authorization token from local storage.
-         *
-         * @return Authorization token if it exists, null if not.
+         * Retreives the authorization token from Chrome Storage.
          */
         getToken: function() {
-            return window.localStorage.getItem(this.key);
+            chrome.storage.local.get("token", function(result) {
+                return result.token
+            });
         },
 
         /**
-         * Clears the authorization token from the local storage.
+         * Clears the authorization token from the Chrome storage.
          */
         clearToken: function() {
-            delete window.localStorage.removeItem(this.key);
+            chrome.storage.local.remove("token", function() {
+                console.log("Token Cleared")
+            });
         }
     }
 })();

@@ -1,4 +1,4 @@
-Copyright 2012 JJ Ford
+Copyright-2017 2012: Original Author, JJ Ford and Contributor, Juan J Ramirez.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
